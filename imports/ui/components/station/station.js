@@ -22,12 +22,12 @@ Template.station.events({
 
     var data = {}
     console.log('submit .info-station-add')
-    Meteor.call('stations.insert', title.value, url.value, (error) => {
+    Meteor.call('stations.insert', name.value, eva.value, (error) => {
       if (error) {
         alert(error.error);
       } else {
-        title.value = '';
-        url.value = '';
+        name.value = '';
+        eva.value = '';
       }
     });
   },
