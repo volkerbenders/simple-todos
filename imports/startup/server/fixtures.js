@@ -2,6 +2,7 @@
 
 import { Meteor } from 'meteor/meteor';
 import { Links } from '../../api/links/links.js';
+import { Stations } from '../../api/links/stations.js';
 
 Meteor.startup(() => {
   // if the Links collection is empty
@@ -30,5 +31,21 @@ Meteor.startup(() => {
     ];
 
     data.forEach(link => Links.insert(link));
+  }
+  if (Stations.find().count() === 0) {
+    const data = [
+      {
+        name: 'Bocholt',
+        eva: '0815',
+        createdAt: new Date(),
+      },
+      {
+        name: 'Dortelweil',
+        eva: '4711',
+        createdAt: new Date(),
+      },
+    ];
+
+    data.forEach(station => Stations.insert(station));
   }
 });

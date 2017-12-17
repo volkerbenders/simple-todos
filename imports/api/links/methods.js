@@ -15,4 +15,14 @@ Meteor.methods({
       createdAt: new Date(),
     });
   },
+  'stations.insert'(stationName, eva) {
+    check(stationName, String);
+    check(eva, String);
+
+    return Stations.insert({
+      stationName,
+      eva,
+      createdAt: new Date(),
+    });
+  },
 });

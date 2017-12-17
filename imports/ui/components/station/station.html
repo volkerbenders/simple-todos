@@ -1,0 +1,17 @@
+<template name="station">
+  <h2>Learn Stations!</h2>
+
+  <h2>Stations!</h2>
+  <ul>
+    <li>
+      <form class="info-station-add">
+        <input type="text" name="name" placeholder="Station name" required>
+        <input type="name" name="eva" placeholder="EVA" required>
+        <input type="submit" name="submit" value="Add new Station">
+      </form>
+    </li>
+    {{#each stations}}
+      <li>{{name}}, (EVA: {{eva}})</li>
+    {{/each}}
+  </ul>
+</template>
