@@ -29,5 +29,13 @@ Template.station.events({
         eva.value = ''
       }
     })
+  },
+  'click .deleteButton' (event) {
+    console.log('clicked "deleteButton" ' + event.target.value)
+    Meteor.call('stations.remove', event.target.value, (error) => {
+      if (error) {
+        console.err('Error removing Station...')
+      }
+    })
   }
 })

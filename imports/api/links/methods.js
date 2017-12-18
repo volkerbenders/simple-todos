@@ -26,5 +26,11 @@ Meteor.methods({
       eva,
       createdAt: new Date()
     })
+  },
+  'stations.remove' (id) {
+    console.log('Meteor.methods: stations.remove id: >' + id + '<')
+    check(id, String)
+
+    return Stations.remove(id)
   }
 })

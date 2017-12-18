@@ -11,7 +11,8 @@
       </form>
     </li>
     {{#each stations}}
-      <li>{{name}}, (EVA: {{eva}})</li>
+      <li>{{name}}, (EVA: {{eva}}) <button name="deleteButton" class="deleteButton" title="Delete" value="{{_id}}" ></button>
+      </li>
     {{/each}}
   </ul>
 </template>
