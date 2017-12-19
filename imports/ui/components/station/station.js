@@ -41,8 +41,11 @@ Template.station.events({
   'click .queryStation' (event) {
     const target = event.target
     var name = target.stationName
+    console.log('clcked queryStation "' + name + '"')
+    console.log('clcked queryStation JSON.stringify(target): "' + JSON.stringify(target) + '"')
     name = 'Deggendorf'
-    
+    name = 'Bocholt'
+
     console.log('clcked queryStation "' + name + '"')
     Meteor.call('stations.query', name, (error) => {
       if (error) {
