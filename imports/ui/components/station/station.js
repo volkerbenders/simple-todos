@@ -37,5 +37,19 @@ Template.station.events({
         console.err('Error removing Station...')
       }
     })
+  },
+  'click .queryStation' (event) {
+    const target = event.target
+    var name = target.stationName
+    name = 'Deggendorf'
+    
+    console.log('clcked queryStation "' + name + '"')
+    Meteor.call('stations.query', name, (error) => {
+      if (error) {
+        console.err('Error Querying Station...')
+      } else {
+        console.log('Query for "' + name + '" was ok :-)')
+      }
+    })
   }
 })

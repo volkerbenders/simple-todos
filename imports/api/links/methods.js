@@ -32,5 +32,12 @@ Meteor.methods({
     check(id, String)
 
     return Stations.remove(id)
+  },
+  'stations.query' (name) {
+    var apiKey = JSON.stringify(Meteor.settings.bahn.apiKey)
+    var stationUrl = JSON.stringify(Meteor.settings.bahn.stationApi)
+    console.log('method: stations.query... (key: ' + apiKey + ')')
+    console.log('method: stations.query... (key: ' + stationUrl + ')')
   }
+
 })
