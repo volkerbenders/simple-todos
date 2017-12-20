@@ -63,5 +63,8 @@ Template.station.events({
     const target = event.target
     const eva = target.value
     console.log('detected click on "showTimeTable" for station #  <' + eva + '>')
+  },
+  'click .station' (event, template) {
+    console.log('detected click on "Station"-ListItem for station #  <' + this._id + '>')
   }
 })
