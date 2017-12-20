@@ -29,10 +29,13 @@ Meteor.methods({
     })
   },
   'stations.insert.db.station' (stationData) {
-    console.log('Meteor.methods: stations.insert.db.station stationData: >' + JSON.stringify(stationData) + '<')
+    var content = JSON.parse(stationData.content)
+    var result = content.result
+    //console.log('Meteor.methods: stations.insert.db.station stationData: >' + JSON.stringify(content) + '<')
+    console.log('Meteor.methods: stations.insert.db.station stationData: >' + JSON.stringify(result) + '<')
 
     return Stations.insert({
-      stationData,
+      result,
       createdAt: new Date()
     })
   },
