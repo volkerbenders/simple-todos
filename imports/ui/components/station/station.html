@@ -12,6 +12,7 @@
     </li>
     {{#each stations}}
       <li>{{name}}, {{result.[0].name}} (number: {{result.[0].number}},), wifi: {{result.[0].hasWifi}} , (EVA: {{result.[0].evaNumbers.[0].number}}) <button name="deleteButton" class="deleteButton" title="Delete" value="{{_id}}" ></button>
+        <button type="button" name="showTimeTable" class="showTimeTable" title="showTimeTable" value="{{result.[0].evaNumbers.[0].number}}"></button>
       </li>
     {{/each}}
   </ul>

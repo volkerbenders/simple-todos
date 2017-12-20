@@ -58,5 +58,10 @@ Template.station.events({
         console.log('Query for "' + name + '" was ok :-)')
       }
     })
+  },
+  'click .showTimeTable' (event, template) {
+    const target = event.target
+    const eva = target.value
+    console.log('detected click on "showTimeTable" for station #  <' + eva + '>')
   }
 })
