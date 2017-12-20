@@ -66,8 +66,13 @@ Meteor.methods({
       const result = HTTP.call('GET', stationUrl, {
         headers: headerObject
       })
-      console.log('result: ' + JSON.stringify(result))
-      Stations.insert(result.content)
+      //console.log('result: ' + JSON.stringify(result))
+      //Stations.insert(result)
+      Meteor.call('stations.insert.db.station', result, (error) => {
+        if (error) {
+          console.err('Error inserting db Station: ' + JSON.stringify(error))
+        }
+      })
       return true
     } catch (e) {
       // Got a network error, timeout, or HTTP error in the 400 or 500 range.
