@@ -5,13 +5,15 @@
   <ul>
     <li>
       <form class="info-station-add">
-        <input type="name" name="stationName" placeholder="Station name" required>
+        <input type="name" name="stationName" class="stationName" placeholder="Station name" required> <button type="button" name="queryStation" class="queryStation" title="Query Station" value="itzelbritzel"></button>
         <input type="name" name="eva" placeholder="EVA" required>
         <input type="submit" name="submit" value="Add new Station">
       </form>
     </li>
     {{#each stations}}
-      <li>{{name}}, (EVA: {{eva}})</li>
+      <li>{{name}}, {{result.[0].name}} (number: {{result.[0].number}},), wifi: {{result.[0].hasWifi}} , (EVA: {{result.[0].evaNumbers.[0].number}}) <button name="deleteButton" class="deleteButton" title="Delete" value="{{_id}}" ></button>
+        <button type="button" name="showTimeTable" class="showTimeTable" title="showTimeTable" value="{{result.[0].evaNumbers.[0].number}}"></button>
+      </li>
     {{/each}}
   </ul>
 </template>
