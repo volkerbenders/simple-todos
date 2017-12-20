@@ -38,13 +38,17 @@ Template.station.events({
       }
     })
   },
-  'click .queryStation' (event) {
+  'click .queryStation' (event, template) {
     const target = event.target
     var name = target.stationName
-    console.log('clcked queryStation "' + name + '"')
+
+    // https://forums.meteor.com/t/how-to-get-value-of-an-input-text/2884/3
+    console.log('clcked template "' + template + '"')
+    name = template.find('.stationName').value
+    console.log('clicked queryStation "' + name + '"')
     console.log('clcked queryStation JSON.stringify(target): "' + JSON.stringify(target) + '"')
-    name = 'Deggendorf'
-    name = 'Bocholt'
+    //name = 'Deggendorf'
+    //name = 'Bocholt'
 
     console.log('clcked queryStation "' + name + '"')
     Meteor.call('stations.query', name, (error) => {
