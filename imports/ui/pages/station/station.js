@@ -10,11 +10,13 @@ Template.Station_data.onCreated(function () {
 })
 
 Template.Station_data.helpers({
-  stations() {
+  stations () {
     console.log('get id from flowrouter')
     const id = FlowRouter.getParam('_id')
     console.log('got id <' + id + '>')
-    //const s =
-    return Stations.find(id)
+
+    const station = Stations.findOne(id)
+    console.log('got station <' + station + '>')
+    return station
   }
 })
