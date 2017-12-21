@@ -1,4 +1,5 @@
 import { Stations } from '/imports/api/links/stations.js'
+import { FlowRouter } from 'meteor/kadira:flow-router'
 import { Meteor } from 'meteor/meteor'
 import './station.html'
 
@@ -65,6 +66,8 @@ Template.station.events({
     console.log('detected click on "showTimeTable" for station #  <' + eva + '>')
   },
   'click .station' (event, template) {
-    console.log('detected click on "Station"-ListItem for station #  <' + this._id + '>')
+    var mongoId = this._id
+    console.log('detected click on "Station"-ListItem for station #  <' + mongoId + '>...')
+    FlowRouter.go('Station.data', { _id: mongoId })
   }
 })

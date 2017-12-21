@@ -45,6 +45,12 @@ Meteor.methods({
 
     return Stations.remove(id)
   },
+  'stations.getById' (id) {
+    console.log('Meteor.methods: stations.getById id: >' + id + '<')
+    check(id, String)
+
+    return Stations.find(id)
+  },
   'stations.query' (name) {
     var apiKey = JSON.stringify(Meteor.settings.bahn.apiKey)
     var stationUrl = JSON.stringify(Meteor.settings.bahn.stationApi)
