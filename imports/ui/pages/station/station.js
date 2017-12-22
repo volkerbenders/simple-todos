@@ -17,6 +17,7 @@ Template.Station_data.helpers({
 
     const station = Stations.findOne(id)
     console.log('got station <' + station + '>')
+    console.log('got station <' + JSON.stringify(station) + '>')
     return station
   }
 })
