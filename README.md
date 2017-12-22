@@ -1,6 +1,7 @@
 # Packages added after project setup
 
 * [http](https://docs.meteor.com/api/http.html)
+* [Flow Router](https://guide.meteor.com/routing.html)
 
 # Passwords
 
@@ -12,5 +13,6 @@ Usage:
 # Pass development settings when running your app locally
 meteor --settings development.json
 ```
+
 
 # EOF
